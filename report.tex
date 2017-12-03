@@ -60,18 +60,18 @@
 The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups, but also leads to new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of this shape, the toss has to be well oriented. In order to find the optimal angle, we need to use two basic’s physical concepts. The first one is the gyroscopic effect which tends towards to stabilize the flight and is simply due to the spinning momentum transmitted through the frisbee’s toss. The second one is the aerodynamic lift which allows the frisbee to fly and is caused by its movement in the air.
 
 \section{Method}
-The method used to find the optimal throw is through computing simulations. This requiers to know the main forces acting on the frisbee which are the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction while the lift is the normal force also caused by the air.
+The method used to find the optimal throw is through computing simulations. This requiers to know the main forces acting on the frisbee which are the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction while the lift is the normal force applied on the frisbee, also caused by the air.
 
 \subsection{Preamble}
-In order to determine the magnitude of these forces two common physical relationships are used but they differ according to the kind of fluid studying. Fortunately for us, there are only two types of fluid : laminar's and turbulent's ones. The Reynolds number ,$\Re$, allows us to determine it and is given by,
+In order to determine the magnitude of these forces two common physical relationships are used but they differ according to the kind of fluid studying. Fortunately for us, there are only two types of fluids : laminar's and turbulent's ones. The Reynolds number ,$\Re$, allows us to determine the sort of fluid and is given by,
 \[\Re = \frac{\rho v d}{\eta}\]
-If we directly apply it on our case : $\rho$ is the density of the air, v is the velocity of the Frisbee relative to the air, d is diameter of the frisbee and $\eta$ is the viscosity of the air. For a standard condition of temperature and pressure, the density is 1.23 $kg/m^3$, the velocity is 14 m/s for a frisbee's diameter 0.260 m and the viscosity is 1.73x$10^{-5}$ $(N.sec)/m^2$. This gives $\Re$ equal to 2.59x$10^5$ which correspond to a laminar flow.
+If we directly apply it on our case : $\rho$ is the density of the air, v is the velocity of the Frisbee relative to the air, d is diameter of the frisbee and $\eta$ is the viscosity of the air. For a standard condition of temperature and pressure, the density is 1.23 $kg/m^3$, the velocity is 14 m/s for a frisbee's diameter 0.260 m and the viscosity is 1.73x$10^{-5}$ $(N.sec)/m^2$. This gives a Reynold's number equal to 2.59x$10^5$ which correspond to a laminar flow.
 
 \subsection{The drag force}
 
 Since we are dealing with a laminar flow, the drag force, $F_d$, can be calculated from the Prandtl formula,
 \[F_d = - \frac{C_D \rho \pi \left(\frac{d}{2}\right)^2 v^2}{2}\]
-where $C_D$ the drag coefficient. This coefficient follows an empirical law\cite{art1} that varies with the angle of attack $\alpha$,
+where $C_D$ is the drag coefficient. This coefficient follows an empirical law\cite{art1} that varies with the angle of attack $\alpha$,
 \[C_D = C_{D0} + C_{D\alpha}(\alpha-\alpha_0)^2\]
 All the coefficients in this relation (except $\alpha$) are found by experiment and depend on the physical aspects of the Frisbee such as the roughtness of the surface.
 The Bernoulli Principle is a well known principle that states that there is a relationship between the velocity, pressure and height of a fluid at any point on the same stream line.
