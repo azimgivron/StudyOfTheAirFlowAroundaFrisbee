@@ -57,17 +57,22 @@
 \tableofcontents
 \newpage 
 \section{Introduction}
-The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups, but also leads to new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of this shape, the toss has to be well oriented. In order to find the optimal angle, we need to use two basic’s physical concepts. The first one is the gyroscopic effect which tends towards to stabilize the flight and is simply due to the spinning momentum transmitted through the frisbee’s toss. The second one is the aerodynamic lift which allows the frisbee to fly and is caused by its motion through the air and the pressure acting on it.
+The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups, but also leads to new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of this shape, the toss has to be well oriented. In order to find the optimal angle, we need to use two basic’s physical concepts : 
+\\The first one is the aerodynamic lift which allows the frisbee to fly. It can be explain with two considerations. On one hand we know that the aire has to flow around the frisbee, and the frisbee's shape forces the aire above it to travel faster. While on the other hand, bernoulli's equation state that the pressure is low at locations where the flow velocity is high and vice-versa. This allows us to conclude that the pressure exert under the frisbee is higher than the one above it, thus the frisbee glide. This pressure exert under the frisbee is due to a force which is the lift.
+\\The second concept is the gyroscopic effect which tends towards to stabilize the flight. This is because of the conservation of the angular momentum that the frisbee does not flip. This momentum is due to torque applyed through the toss and also due to the lift force which is not centered on the frisbee.
 
 \section{Method}
-In order to find the optimal throw, we simulated the frisbee's trajectory by the computing simulations. This requiers to know the main forces acting on it which are the gravitational force and the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction while the lift is the normal force applied on the frisbee. Since those forces acte only through the normal and parallel direction of the frisbee, we simplified the simulation by studying only the trajectory in these tow dimension.
+In order to find the optimal throw, we simulated the frisbee's trajectory by computing simulation. This requiers to know the main and forces acting on it, which are the gravitational force and the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction while the lift is the normal force applied on the frisbee. As we mentioned in the introduction, we also have to calculate the torque due the lift.
 
 TO DO FIND ILLUSTRATION
 
-\subsection{Calculation of the forces}
-The three forces cited above are all expressed by physical relationships which allowed us to fine them. in the following part, we will present these relationships.
+\subsection{Calculation of the torque and the forces applied on the frisbee}
+The three forces cited above and the torque are all expressed by physical relationships which allowed us to fine them. in the following part, we will present these relationships.
 \\
-The gravitational force $F_g$ is proportional to the mass $m$
+The torque $\tau$ is given by the vectorial product between the lift force $F_d$ and the application point $r$ : 
+\\$\tau=r$ x $F$
+\\
+The gravitational force $F_g$ exert on the frisbee is directly proportional to its mass $m$
 \[F_g = m g\]
 with $g$, the gravitational acceleration.
 \\
