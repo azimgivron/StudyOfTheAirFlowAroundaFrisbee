@@ -57,37 +57,35 @@
 \tableofcontents
 \newpage 
 \section{Introduction}
-The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups, but also leads to new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of this shape, the toss has to be well oriented. In order to find the optimal angle, we need to use two basic’s physical concepts. The first one is the gyroscopic effect which tends towards to stabilize the flight and is simply due to the spinning momentum transmitted through the frisbee’s toss. The second one is the aerodynamic lift which allows the frisbee to fly and is caused by its movement in the air.
+The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups, but also leads to new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of this shape, the toss has to be well oriented. In order to find the optimal angle, we need to use two basic’s physical concepts. The first one is the gyroscopic effect which tends towards to stabilize the flight and is simply due to the spinning momentum transmitted through the frisbee’s toss. The second one is the aerodynamic lift which allows the frisbee to fly and is caused by its motion through the air and the pressure acting on it.
 
 \section{Method}
-The method used to find the optimal throw is through computing simulations. This requiers to know the main forces acting on the frisbee which are the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction while the lift is the normal force applied on the frisbee, also caused by the air.
+In order to find the optimal throw, we simulated the frisbee's trajectory by the computing simulations. This requiers to know the main forces acting on it which are the gravitational force and the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction while the lift is the normal force applied on the frisbee. Since those forces acte only through the normal and parallel direction of the frisbee, we simplified the simulation by studying only the trajectory in these tow dimension.
 
-\subsection{Preamble}
-In order to determine the magnitude of these forces two common physical relationships are used but they differ according to the kind of fluid studying. Fortunately for us, there are only two types of fluids : the laminar's one which caracterize ordered flows, and by opposition the turbulent's one used describe chaotic flows. The Reynolds number ,$\Re$, allows us to determine the sort of fluid and is given by,
+TO DO FIND ILLUSTRATION
+
+\subsection{Calculation of the forces}
+The three forces cited above are all expressed by physical relationships which allowed us to fine them. in the following part, we will present these relationships.
+\\
+The gravitational force $F_g$ is proportional to the mass $m$
+\[F_g = m g\]
+with $g$, the gravitational acceleration.
+\\
+The resolution of the equations to obtain the drag and lifts forces can be very difficult to solve because they depend on the geometry of the object studied. Fortunately, we can approximate the frisbee's geometry to a flat plate moving alongside the flow. In this case, the drag and lift forces are respectively given by :
+\[F_d = -\frac{C_d \rho A  v^2}{2}\]
+\[F_l = \frac{C_l \rho A  v^2}{2}\]
+In this particular case, the fluid is the air, thus $\rho$ is its density, $v$ is the velocity of the Frisbee relative to the air, A is the surface area of the plate exposed to the air flow and $C_d$ and $C_l$ are respectively the drag and lift coefficients.
+The drag coefficient, in general, depends on the Reynolds number which gives the type of flow studying. A flow can be laminar or turbulent. The first one concerns ordered flows while the second one caracterize choatics flows. This number can be calculated with the following relationship:
 \[\Re = \frac{\rho v d}{\eta}\]
-If we directly apply it on our case : $\rho$ is the density of the air, v is the velocity of the Frisbee relative to the air, d is diameter of the frisbee and $\eta$ is the viscosity of the air. For a standard condition of temperature and pressure, the density is 1.23 $kg/m^3$, the velocity is 14 m/s for a frisbee's diameter 0.260 m and the viscosity is 1.73x$10^{-5}$ $(N.sec)/m^2$. This gives a Reynold's number equal to 2.59x$10^5$ which correspond to a turbulent flow.
+where the only new term appearing here is $\eta$, the viscosity of the air.
+By using the data in annexes, we found $Re=2.59$ $10^5$ which correspond to a turbulent flow.
+This leads us to another equation:
+\[C_d = C_{d0} + C_{d\alpha}(\alpha-\alpha_0)^2\]
+which links the drag coefficient $C_d$ to the angle of attack $\alpha$ and the other terms $C_{d0}$, $C_{d\alpha}$ and $\alpha_0$ are constants, found experimentally.
+\\Finally, the lift coefficient can be found with the relationship below:
+\[C_l = C_{l0} + C_{l \alpha} \alpha\]
+where $C_{l0}$ and $C_{l\alpha}$ are also constant found experimentally.
 
-\subsection{The drag force}
-
-Since we are dealing with a turbulent flow, the drag force, $F_d$, can be calculated from the Prandtl formula,
-\[F_d = - \frac{C_D \rho \pi \left(\frac{d}{2}\right)^2 v^2}{2}\]
-where $C_D$ is the drag coefficient. This coefficient follows an empirical law\cite{art1} that varies with the angle of attack $\alpha$,
-\[C_D = C_{D0} + C_{D\alpha}(\alpha-\alpha_0)^2\]
-All the coefficients in this relation (except $\alpha$) are found by experiment and depend on the physical aspects of the Frisbee such as the roughness of the surface.
-The Bernoulli Principle is a well known principle that states that there is a relationship between the velocity, pressure and height of a fluid at any point on the same stream line.
-
-\subsection{The lift force}
-
-The lift force applied on a Frisbee is very similar to the lift force on
-airplane wings and is calculated using the Bernoulli principle. It states a relationship between the velocity, pressure and height of a fluid at any point on the same streamline. It can be expressed mathematically by,
-\[\frac{v_1^2}{2} + \frac{p_1}{\rho} + gh_1 = \frac{v_2^2}{2} + \frac{p_2}{\rho} + gh_2\]
-where $p$ is the pressure, $\rho$ the density, $v$ the velocity, $g$ the acceleration of gravity and $h$ the height. For the purpose of the study, the height difference between the air flowing above and the air flowing below the Frisbee is negligible (thin Frisbee), therefore the two height dependent terms cancel out. The following assumption will also be made : the velocity of the air flowing above is directly proportional to the velocity of the air below because the difference in path length is constant(i.e. $v_1 = kv_2$). Bernoulli's equation becomes :
-\\
-\[\frac{k^2v_2^2}{2} + \frac{p_1}{\rho} = \frac{v_2^2}{2} + \frac{p_2}{\rho}\]
-\\
-Knowing that $F_L/A = p_1 - p_2$ (with $F_L$ being the lift force), it is possible to solve the system of equation and get the lift force,
-\[F_L = \frac{1}{2} \rho v^2 A k \]
-To perform a great analogy with the drag force, $k$ will be expressed as the lift coefficient $C_L$ and is given also by the empirical law $C_L = C_{L0} + C_{L \alpha} \alpha$ where the variable $\alpha$ depends on the angle of attack and the coefficient depends on the physical properties of the Frisbee.
 
 \begin{thebibliography}{9}
 
