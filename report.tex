@@ -76,7 +76,7 @@ The resolution of the equations to obtain the drag and lifts forces can be very 
 \[F_d = -\frac{C_d \rho A  v^2}{2}\]
 \[F_l = \frac{C_l \rho A  v^2}{2}\]
 In this particular case, the fluid is the air, thus $\rho$ is its density, $v$ is the velocity of the Frisbee relative to the air, A is the surface area of the plate exposed to the air flow and $C_d$ and $C_l$ are respectively the drag and lift coefficients.
-The drag coefficient, in general, depends on the Reynolds number which gives the type of flow studying. A flow can be laminar or turbulent. The first one concerns ordered flows while the second one caracterize choatics flows. This number can be calculated with the following relationship:
+The drag coefficient, in general, depends on the Reynolds number which gives the type of flow studying. A flow can be laminar or turbulent. The first one concerns ordered flows while the second one caracterize chaotics flows. This number can be calculated with the following relationship:
 \[\Re = \frac{\rho v d}{\eta}\]
 where the only new term appearing here is $\eta$, the viscosity of the air.
 By using the data presented at the result section, we found $Re=2.59$ $10^5$ which correspond to a turbulent flow.
@@ -92,7 +92,11 @@ The initial conditions are given by :
 \[x = 0 m\]
 \[y = 1 m\]
 \[v_x = v_i cos\alpha \]
-\[v_y = v_i sin\alpha \]
+\[v_y = v_i sin\alpha \] 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{initial.jpg}
+\end{figure}
 where x is the horizontal position, y is the vertical one and $v_x$ and $v_y$ are respectively the horizontal and vertical velocity.
 The next positions are calculated by :
 \[x_{next} = x_{previous} + v_{x_{previous}} \Delta t \]
@@ -101,18 +105,33 @@ The next positions are calculated by :
 \[a_y = \frac{v_{y_{next}}}{\Delta t} = \frac{C_l \rho A  v_{y_{previous}}^2}{2m} - g\]
 where $\Delta t$ is the time spent between two successive positions
 \section{Results}
-In this section, we will present three graphs that we obtain from the simulation. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $.
+In this section, we will present three graphs that we obtain from the simulation. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $. 
+\\The parameters values are the following:
+TO DO ADD BOARD WITH THE CONSTANTS
 \begin{figure}[h]
  \centering
-\includegraphics[scale=0.7]{graph1.jpg}
+\includegraphics[scale=0.6]{graph1.jpg}
 \end{figure}
+\\The first graph shows that an angle of attack of $5\,^{\circ}$ permit to the frisbee to reach a distance of $19m$.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{graph2.jpg}
-\includegraphics[scale=0.7]{graph3.jpg}
+\includegraphics[scale=0.6]{graph3.jpg}
 \end{figure}
+\\The second one, thrown with an angle of $10\,^{\circ}$ travelled for $26m$.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{graph2.jpg}
+\end{figure}
+\\The last one only glide for $8m$ but was tossed with an angle of $45\,^{\circ} $.
 
-
+\section{Discussion}
+We saw in the different graphs that the angle of attack has an important impact on the distance travelled by the frisbee. It seems like the optimal angle is about $10\,^{\circ}$ since it gave the best results. At first, we would rather think that a $45\,^{\circ}$ inclination will allow a higher lift, since it is the vertical projection of the force applied on the frisbee by the flow, as shown on the scheme below.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{intuitive.jpg}
+\end{figure}
+In reality, it is not the case and it is explainable by introducing the concept of recirculation region. When the frisbee's inclination is not null, there is a flow separation. This create two different areas at different pressure. The pressure's difference forces the flow to come back in the region where the pressure is lower which is behind the frisbee, and is called the recirculation region. This movement of air is opposed to the flow direction, thus it increases the drag force which slow down the frisbee. An angle shorter than $10\,^{\circ}$ is neither optimal because the lift will than be to low.
+\section{Conclusion}
 
 \begin{thebibliography}{9}
 
