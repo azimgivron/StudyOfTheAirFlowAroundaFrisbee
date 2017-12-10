@@ -57,15 +57,15 @@
 \tableofcontents
 \newpage 
 \section{Introduction}
-The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups, but also leads to new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of this shape, the toss has to be well oriented. In order to find the optimal angle, we need to use a basic’s physical concepts, the aerodynamic lift which allows the frisbee to fly. It can be explain with two simple considerations. On one hand we know that the aire has to flow around the frisbee, and the frisbee's shape forces the aire above it to travel faster. While on the other hand, bernoulli's equation state that the pressure is low at locations where the flow velocity is high and vice-versa. This allows us to conclude that the pressure exert under the frisbee is higher than the one above it, thus the frisbee glide. This pressure exert under the frisbee is due to a force which is the lift.
+The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups. It also leads to the creation of new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of it, the toss has to be well oriented. In order to find the optimal angle, we need to first understand how it can fly. It can be easily explain with two simple considerations. On one hand we know that the aire has to flow around the frisbee, and the frisbee's shape forces the aire traveling above it to travel faster than the one below, while on the other hand, bernoulli's equation state that the pressure is low at locations where the flow velocity is high and vice-versa. This allows us to conclude that the pressure exerts under the frisbee is higher than the one exerts above it, that is what make it fly. The difference of pressure between both sides of the frisbee is due to a force pointing upward, normal to the flow direction, it is called the lift. 
 
 \section{Method}
-In order to find the optimal throw, we simulated the frisbee's trajectory by computing simulation. This requiers to know the main and forces acting on it, which are the gravitational force and the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction while the lift is the normal force applied on the frisbee. Since these force only acte in the directions parallel and perpendicular to the flow, we can simplified simulation by only considering those two dimensions.
+In order to find the optimal throw, we simulated the frisbee's trajectory by computing simulation. This requiere to know the velocity and the position of the frisbee at anytime. Since the acceleration modify the velocity through time, we should thus calculate it. This is possible by using the second law of Newton $F = ma$ where $F$ is a force and $m$ and $a$ are respectively the mass and the acceleration of the system. We finally see that the trajectory is indirectly given by the forces acting on the frisbee. The main ones are the gravitational force and the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction, it is the air resistance. Since these force only acte in the directions parallel and perpendicular to the flow, the simulation can be simplified by only considering those two dimensions.
 
 TO DO FIND ILLUSTRATION
 
-\subsection{Calculation of the torque and the forces applied on the frisbee}
-The three forces cited above are all expressed by physical relationships which allowed us to fine them. in the following part, we will present these relationships.
+\subsection{Mathematical decription}
+The three forces cited above are all expressed by physical relationships. In the following part, we will present these relationships.
 \\
 The gravitational force $F_g$ exert on the frisbee is directly proportional to its mass $m$
 \[F_g = m g\]
@@ -85,6 +85,18 @@ which links the drag coefficient $C_d$ to the angle of attack $\alpha$ and the o
 \\Finally, the lift coefficient can be found with the relationship below:
 \[C_l = C_{l0} + C_{l \alpha} \alpha\]
 where $C_{l0}$ and $C_{l\alpha}$ are also constant found experimentally.
+\subsection{Numerical modelling}
+Solving this problem numerically can be done by using different methods. Here, we will use the Euler progressive method. It simply means that position is calculated from the previous one.
+The initial position is given by :
+\[x = x_i cos\alpha\]
+\[y = y_i sin\alpha\]
+where x is the horizontal position and y, the vertical one.
+The next positions are calculated by :
+\[x_{next} = x_{previous} + v_x \Delta t \]
+\[a_x=\frac{v_x}{\Delta t} = -\frac{C_d \rho A  v_x^2}{2m}\]
+\[y_{next} = y_{previous} + v_y \Delta t \]
+\[a_y = \frac{v_y}{\Delta t} = \frac{C_l \rho A  v^2}{2m} - g\]
+where $\Delta t$ is the time spent between two successive positions
 \section{Results}
 
 \begin{thebibliography}{9}
