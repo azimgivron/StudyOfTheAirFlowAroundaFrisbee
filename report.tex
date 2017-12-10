@@ -56,6 +56,8 @@
 
 \tableofcontents
 \newpage 
+\listoffigures
+\newpage
 \section{Introduction}
 The frisbee is one of the objects that was invented decades ago and which is still used today. It is a source of amusement for kids and grown-ups. It also leads to the creation of new sports such as the ultimate frisbee or the disc golf. The particular shape of the frisbee allows it to glide for really long distances but to make the most of it, the toss has to be well oriented. In order to find the optimal angle, we need to first understand how it can fly. It can be easily explain with two simple considerations. On one hand we know that the aire has to flow around the frisbee, and the frisbee's shape forces the aire traveling above it to travel faster than the one below, while on the other hand, bernoulli's equation state that the pressure is low at locations where the flow velocity is high and vice-versa. This allows us to conclude that the pressure exerts under the frisbee is higher than the one exerts above it, that is what make it fly. The difference of pressure between both sides of the frisbee is due to a force pointing upward, normal to the flow direction, it is called the lift. 
 
@@ -65,6 +67,8 @@ In order to find the optimal throw, we simulated the frisbee's trajectory by com
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{forces.jpg}
+\caption{Forces acting on the frisbee}
+\label{Forces acting on the frisbee}
 \end{figure}
 
 \subsection{Mathematical decription}
@@ -93,9 +97,11 @@ The initial conditions are given by :
 \[y = 1 m\]
 \[v_x = v_i cos\alpha \]
 \[v_y = v_i sin\alpha \] 
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \includegraphics[scale=0.7]{initial.jpg}
+\caption{Initial conditions}
+\label{Initial conditions}
 \end{figure}
 where x is the horizontal position, y is the vertical one and $v_x$ and $v_y$ are respectively the horizontal and vertical velocity.
 The next positions are calculated by :
@@ -108,27 +114,35 @@ where $\Delta t$ is the time spent between two successive positions
 In this section, we will present three graphs that we obtain from the simulation. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $. 
 \\The parameters values are the following:
 TO DO ADD BOARD WITH THE CONSTANTS
-\begin{figure}[h]
+\begin{figure}[!h]
  \centering
 \includegraphics[scale=0.6]{graph1.jpg}
+\caption{First result}
+\label{First result}
 \end{figure}
 \\The first graph shows that an angle of attack of $5\,^{\circ}$ permit to the frisbee to reach a distance of $19m$.
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.6]{graph3.jpg}
-\end{figure}
-\\The second one, thrown with an angle of $10\,^{\circ}$ travelled for $26m$.
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \includegraphics[scale=0.6]{graph2.jpg}
+\caption{Second result}
+\label{Second result}
+\end{figure}
+\\The second one, thrown with an angle of $10\,^{\circ}$ travelled for $26m$.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.6]{graph3.jpg}
+\caption{Third result}
+\label{Third result}
 \end{figure}
 \\The last one only glide for $8m$ but was tossed with an angle of $45\,^{\circ} $.
 
 \section{Discussion}
 We saw in the different graphs that the angle of attack has an important impact on the distance travelled by the frisbee. It seems like the optimal angle is about $10\,^{\circ}$ since it gave the best results. At first, we would rather think that a $45\,^{\circ}$ inclination will allow a higher lift, since it is the vertical projection of the force applied on the frisbee by the flow, as shown on the scheme below.
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \includegraphics[scale=0.6]{intuitive.jpg}
+\caption{Lift cause by the flow for different angle}
+\label{Lift cause by the flow for different angle}
 \end{figure}
 In reality, it is not the case and it is explainable by introducing the concept of recirculation region. When the frisbee's inclination is not null, there is a flow separation. This create two different areas at different pressure. The pressure's difference forces the flow to come back in the region where the pressure is lower which is behind the frisbee, and is called the recirculation region. This movement of air is opposed to the flow direction, thus it increases the drag force which slow down the frisbee. An angle shorter than $10\,^{\circ}$ is neither optimal because the lift will than be to low.
 \section{Conclusion}
