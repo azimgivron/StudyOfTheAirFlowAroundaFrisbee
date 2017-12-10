@@ -62,12 +62,13 @@ The frisbee is one of the objects that was invented decades ago and which is sti
 \section{Method}
 In order to find the optimal throw, we simulated the frisbee's trajectory by computing simulation. This requiere to know the velocity and the position of the frisbee at anytime. Since the acceleration modify the velocity through time, we should thus calculate it. This is possible by using the second law of Newton $F = ma$ where $F$ is a force and $m$ and $a$ are respectively the mass and the acceleration of the system. We finally see that the trajectory is indirectly given by the forces acting on the frisbee. The main ones are the gravitational force and the lift and drag forces. The latter is the force exerts by the air on the frisbee in the flow direction, it is the air resistance. Since these force only acte in the directions parallel and perpendicular to the flow, the simulation can be simplified by only considering those two dimensions.
 
-TO DO FIND ILLUSTRATION
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{forces.jpg}
+\end{figure}
 
 \subsection{Mathematical decription}
-The three forces cited above are all expressed by physical relationships. In the following part, we will present these relationships.
-\\
-The gravitational force $F_g$ exert on the frisbee is directly proportional to its mass $m$
+The three forces cited above are all expressed by physical relationships. In the following part, we will present these relationships.The gravitational force $F_g$ exert on the frisbee is directly proportional to its mass $m$
 \[F_g = m g\]
 with $g$, the gravitational acceleration.
 \\
@@ -78,7 +79,7 @@ In this particular case, the fluid is the air, thus $\rho$ is its density, $v$ i
 The drag coefficient, in general, depends on the Reynolds number which gives the type of flow studying. A flow can be laminar or turbulent. The first one concerns ordered flows while the second one caracterize choatics flows. This number can be calculated with the following relationship:
 \[\Re = \frac{\rho v d}{\eta}\]
 where the only new term appearing here is $\eta$, the viscosity of the air.
-By using the data in annexes, we found $Re=2.59$ $10^5$ which correspond to a turbulent flow.
+By using the data presented at the result section, we found $Re=2.59$ $10^5$ which correspond to a turbulent flow.
 This leads us to another equation:
 \[C_d = C_{d0} + C_{d\alpha}(\alpha-\alpha_0)^2\]
 which links the drag coefficient $C_d$ to the angle of attack $\alpha$ and the other terms $C_{d0}$, $C_{d\alpha}$ and $\alpha_0$ are constants, found experimentally.
@@ -87,17 +88,31 @@ which links the drag coefficient $C_d$ to the angle of attack $\alpha$ and the o
 where $C_{l0}$ and $C_{l\alpha}$ are also constant found experimentally.
 \subsection{Numerical modelling}
 Solving this problem numerically can be done by using different methods. Here, we will use the Euler progressive method. It simply means that position is calculated from the previous one.
-The initial position is given by :
-\[x = x_i cos\alpha\]
-\[y = y_i sin\alpha\]
-where x is the horizontal position and y, the vertical one.
+The initial conditions are given by :
+\[x = 0 m\]
+\[y = 1 m\]
+\[v_x = v_i cos\alpha \]
+\[v_y = v_i sin\alpha \]
+where x is the horizontal position, y is the vertical one and $v_x$ and $v_y$ are respectively the horizontal and vertical velocity.
 The next positions are calculated by :
-\[x_{next} = x_{previous} + v_x \Delta t \]
-\[a_x=\frac{v_x}{\Delta t} = -\frac{C_d \rho A  v_x^2}{2m}\]
-\[y_{next} = y_{previous} + v_y \Delta t \]
-\[a_y = \frac{v_y}{\Delta t} = \frac{C_l \rho A  v^2}{2m} - g\]
+\[x_{next} = x_{previous} + v_{x_{previous}} \Delta t \]
+\[a_x=\frac{v_{x_{next}}}{\Delta t} = -\frac{C_d \rho A  v_{x_{previous}}^2}{2m}\]
+\[y_{next} = y_{previous} + v_{y_{previous}} \Delta t \]
+\[a_y = \frac{v_{y_{next}}}{\Delta t} = \frac{C_l \rho A  v_{y_{previous}}^2}{2m} - g\]
 where $\Delta t$ is the time spent between two successive positions
 \section{Results}
+In this section, we will present three graphs that we obtain from the simulation. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $.
+\begin{figure}[h]
+ \centering
+\includegraphics[scale=0.7]{graph1.jpg}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{graph2.jpg}
+\includegraphics[scale=0.7]{graph3.jpg}
+\end{figure}
+
+
 
 \begin{thebibliography}{9}
 
