@@ -98,17 +98,15 @@ where the only new term appearing here is $\eta$, the viscosity of the air.
 By using the data presented at the result section, we found $Re=2.59$ $10^5$ which correspond to a turbulent flow.
 In this case, the drag coefficient can expressed as:
 \[C_d = C_{d0} + C_{d\alpha}(\alpha-\alpha_0)^2\]
-\cite{art5}
-which links it to the angle of attack $\alpha$. The other terms are constants found experimentally.
+which links it to the angle of attack $\alpha$. The other terms are constants found experimentally\cite{art3, art5}.
 \\Finally, the lift coefficient can be found with the relationship below:
 \[C_l = C_{l0} + C_{l \alpha} \alpha\]
-\cite{art5}
-where $C_{l0}$ and $C_{l\alpha}$ are also constants find by experiments.
+where $C_{l0}$ and $C_{l\alpha}$ are also constants find by experiments\cite{ art3, art5}.
 \subsection{Numerical modelling}
-Solving this problem numerically can be done by using different methods. Here, we will use the Euler progressive method. It simply means that position is calculated from the previous one.
+Solving this problem numerically can be done by using different methods\cite{art6}. Here, we will use the Euler progressive method. It simply means that position is calculated from the previous one\cite{art3}.
 The angle of attack appears in the initial conditions since it represent the angle of the toss. Thus, the variation of theis angle will give us different graphs representing the frisbee's trajectory.
 \section{Results}
-In this section, we will present three graphs that we obtained from the simulation. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $. 
+In this section, we will present three graphs that we obtained from the simulation\cite{art5}. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $. 
 \\The parameters values are the following:
 \\
 \begin{center}
@@ -173,42 +171,41 @@ Along the simulation the results appeared to be quite unexpected. It is only aft
 
 
 \begin{thebibliography}{9}
-
-\bibitem{art1}
-  Hummel, Sarah A.,
-  “Frisbee Flight Simulation and Throw Biomechanics”,
-  University of Missouri,
-  2003.
-  
- \bibitem{art2}
-  Lissaman P., Hubbard M.,
-  “Maximum range of flying discs”,
-  University of California,
-  2010.
   
   \bibitem{art3}
   Morrison V. R.,
-  “The Physics of Frisbees”,
+  “The Physics of Frisbees”\footnote{It explains perfectly the different phenomena applied on a frisbee which explain well the basic ideas of the used equations. The showed graphs are explanatory too.},
   Mount Allison University,
   2005.
 
-\bibitem{art4}
+ \bibitem{art2}
+  Lissaman P., Hubbard M.,
+  “Maximum range of flying discs”\footnote{It gives extra informations at a very high level of science. This source wasn't used that much in this report since the later focus more on non-specialists readers but it helped judging the trajectories of the frisbee more evident.},
+  University of California,
+  2010.
+  
+  \bibitem{art4}
   Koyanagi R., Seob K., Ohta K., Ohgi Y.,
-  “A computer simulation of the flying disc based on the wind tunnel test data”,
+  “A computer simulation of the flying disc based on the wind tunnel test data”\footnote{Very detailed about all the aspects, even about the stability of the disk which implicates the gyroscopic effect but wasn't used that much since the report would have been too long.},
   University of Keio \& Yamagata,
   2012.
   
   \bibitem{art5}
   Baumback, Kathleen,
-  “The Aerodynamics of Frisbee Flight”,
+  “The Aerodynamics of Frisbee Flight”\footnote{The graphs were better drawn. Also, it reinforces the expression of the drag and lift coefficient which are empirical coefficient and thus requires multiple sources.},
   University of South Florida,
   2010.
   
   \bibitem{art6}
   Erynn J. Schroeder,
-  “An Aerodynamic Simulation of Disc Flight”,
+  “An Aerodynamic Simulation of Disc Flight”\footnote{It gives extra data about the simulation part but didn't add that much to the report since the equations were the same than all of the previous sources.},
   College of Saint Benedict/Saint John's University,
   2015.
+  
+  \bibitem{book1}
+  Yunus A. \c{C}engel, John M. Cimbala,
+  "Fluid mechanics fundamentals and applications"\footnote{Mettre qqch ici.},
+  2006
 
 \end{thebibliography}
 \end{document}
