@@ -14,7 +14,6 @@
 \usepackage{float}
 \onehalfspacing
 
-
 \author{Anuta Christian,Givron Azim}
 \title{The frisbee's aerodynamism}
 
@@ -98,15 +97,15 @@ where the only new term appearing here is $\eta$, the viscosity of the air.
 By using the data presented at the result section, we found $Re=2.59$ $10^5$ which correspond to a turbulent flow.
 In this case, the drag coefficient can expressed as:
 \[C_d = C_{d0} + C_{d\alpha}(\alpha-\alpha_0)^2\]
-which links it to the angle of attack $\alpha$. The other terms are constants found experimentally\cite{art3, art5}.
+which links it to the angle of attack $\alpha$. The other terms are constants found experimentally\footnote{(Morrison V. R. 2005, 1-12), (Baumback et al. 2010, 1-16)}.
 \\Finally, the lift coefficient can be found with the relationship below:
 \[C_l = C_{l0} + C_{l \alpha} \alpha\]
-where $C_{l0}$ and $C_{l\alpha}$ are also constants find by experiments\cite{ art3, art5}.
+where $C_{l0}$ and $C_{l\alpha}$ are also constants find by experiments.
 \subsection{Numerical modelling}
-Solving this problem numerically can be done by using different methods\cite{art6}. Here, we will use the Euler progressive method. It simply means that position is calculated from the previous one\cite{art3}.
+Solving this problem numerically can be done by using different methods\footnote{(Schroeder 2015, 1-32)}. Here, we will use the Euler progressive method. It simply means that position is calculated from the previous one\footnote{(Morrison V. R. 2005, 1-12)}.
 The angle of attack appears in the initial conditions since it represent the angle of the toss. Thus, the variation of theis angle will give us different graphs representing the frisbee's trajectory.
 \section{Results}
-In this section, we will present three graphs that we obtained from the simulation\cite{art5}. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $. 
+In this section, we will present three graphs\footnote{(Baumback et al. 2010, 1-16)} that we obtained from the simulation. All of them were made with the same parameters values except for the angle of attack which is varying from $5\,^{\circ}$ up to $45\,^{\circ} $. 
 \\The parameters values are the following:
 \\
 \begin{center}
@@ -134,7 +133,7 @@ In this section, we will present three graphs that we obtained from the simulati
 \begin{figure}[H]
  \centering
 \includegraphics[scale=0.6]{graph1.jpg}
-\caption{First result}\cite{art5}
+\caption{First result}
 \label{First result}
 \end{figure}
 \leavevmode
@@ -142,7 +141,7 @@ In this section, we will present three graphs that we obtained from the simulati
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{graph2.jpg}
-\caption{Second result}\cite{art5}
+\caption{Second result}
 \label{Second result}
 \end{figure}
 \leavevmode
@@ -150,7 +149,7 @@ In this section, we will present three graphs that we obtained from the simulati
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{graph3.jpg}
-\caption{Third result}\cite{art5}
+\caption{Third result}
 \label{Third result}
 \end{figure}
 \leavevmode
@@ -169,43 +168,46 @@ In reality, it is not the case and it is explainable by introducing the concept 
 \section{Conclusion}
 Along the simulation the results appeared to be quite unexpected. It is only after a deep research trough fluid mechanics phenomena that we could understand them. More precisely there were two of them : the lift force and the recirculation region. The first one is simply due to the acceleration provided by the air flow, and allows to frisbee to gain altitude. The second one is caused by the inclination of the frisbee relative to the air velocity, and lead to an increase of the air resistance. From those physical concepts, we were able to understand that the angle of attack would be greater than $0\,^{\circ}$ but smaller $45\,^{\circ}$, and it appeared to be optimal for a $10\,^{\circ}$ inclination.
 
-
 \begin{thebibliography}{9}
   
-  \bibitem{art3}
+  \bibitem{phd1}
   Morrison V. R.,
-  “The Physics of Frisbees”\footnote{It explains perfectly the different phenomena applied on a frisbee which explain well the basic ideas of the used equations. The showed graphs are explanatory too.},
+  2005,
+  “The Physics of Frisbees”,
+  PhD diss.,
   Mount Allison University,
-  2005.
+  
+  Morrison is a research scientist graduated from the Mount Allison university and is currently working at the Talmic Lab which is specialized in electronic compound. His thesis has probably been peer-reviewed.
+	
+ \bibitem{art1}
+Peter Lissaman, Mont Hubbard, Maximum range of flying discs, In Procedia Engineering, Volume 2, Issue 2, 2010, Pages 2529-2535, ISSN 1877-7058, https://doi.org/10.1016/j.proeng.2010.04.027.
+(http://www.sciencedirect.com/science/article/pii/S187770581000281X)
+Keywords: Flying discs; Frisbee; Flight dynamics
 
- \bibitem{art2}
-  Lissaman P., Hubbard M.,
-  “Maximum range of flying discs”\footnote{It gives extra informations at a very high level of science. This source wasn't used that much in this report since the later focus more on non-specialists readers but it helped judging the trajectories of the frisbee more evident.},
-  University of California,
-  2010.
+Peter Lissaman has provided many other articles about object under turbulent phenomena. Mont Hubbard is working at the University of California in the department of Mechanical \& Aerospace Engineering which makes him authoritative. Procedia Engineering is an open access collection of conference proceedings published between 2012 and 2017, with an emphasis in core engineering disciplines, such as aerospace, chemical, civil, mechanical or structural engineering. This article is certainly peer-reviewed and up-to-date.
   
-  \bibitem{art4}
-  Koyanagi R., Seob K., Ohta K., Ohgi Y.,
-  “A computer simulation of the flying disc based on the wind tunnel test data”\footnote{Very detailed about all the aspects, even about the stability of the disk which implicates the gyroscopic effect but wasn't used that much since the report would have been too long.},
-  University of Keio \& Yamagata,
-  2012.
+  \bibitem{art2}
+Reno Koyanagi, Kazuya Seo, Ken Ohta, Yuji Ohgi, A computer simulation of the flying disc based on the wind tunnel test data, In Procedia Engineering, Volume 34, 2012, Pages 80-85, ISSN 1877-7058, https://doi.org/10.1016/j.proeng.2012.04.015.
+(http://www.sciencedirect.com/science/article/pii/S1877705812016281)
+Keywords: Flying disc; computer simulation; aerodynamics
   
-  \bibitem{art5}
-  Baumback, Kathleen,
-  “The Aerodynamics of Frisbee Flight”\footnote{The graphs were better drawn. Also, it reinforces the expression of the drag and lift coefficient which are empirical coefficient and thus requires multiple sources.},
-  University of South Florida,
-  2010.
+  \bibitem{art3}
+Baumback, Kathleen (2010) "The Aerodynamics of Frisbee Flight," Undergraduate Journal of Mathematical Modeling: One + Two: Vol. 3: Iss. 1, Article 19.
+DOI: http://dx.doi.org/10.5038/2326-3652.3.1.31
+Available at: http://scholarcommons.usf.edu/ujmm/vol3/iss1/31
+
+In 2017, Undergraduate Journal of Mathematical Modeling: One + Two was awarded the DOAJ Seal for its high degree of openness and for adhering to best practices and high publishing standards. So this article is peer-reviewed and up-to-date.
   
-  \bibitem{art6}
-  Erynn J. Schroeder,
-  “An Aerodynamic Simulation of Disc Flight”\footnote{It gives extra data about the simulation part but didn't add that much to the report since the equations were the same than all of the previous sources.},
-  College of Saint Benedict/Saint John's University,
-  2015.
+  \bibitem{phd2}
+Schroeder, Erynn J., "An Aerodynamic Simulation of Disc Flight" (2015). Honors Theses. 68.
+http://digitalcommons.csbsju.edu/honors\_theses/68
+
+It is a thesis that has been reviewed by a teacher (Dr. Thomas Kirkman). The code of his simulation is given in the annexe and there are many sources from scientific articles to University courses.
   
   \bibitem{book1}
-  Yunus A. \c{C}engel, John M. Cimbala,
-  "Fluid mechanics fundamentals and applications"\footnote{Mettre qqch ici.},
-  2006
+  \c{C}engel, Yunus A., and John M. Cimbala. 2006. Fluid mechanics: fundamentals and applications. Boston: McGraw-HillHigher Education.
+  
+  This book is used by many teachers (including ours) and represent the basics of fluid mechanics. Thus, this is definitely a reliable source.
 
 \end{thebibliography}
 \end{document}
